@@ -7,6 +7,11 @@
     <title>Franchise Success Navigator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      // Shim for process.env in browser environment for GitHub Pages deployment
+      if (typeof process === 'undefined') {
+        window.process = { env: {} };
+      }
+
       tailwind.config = {
         darkMode: 'class',
         theme: {
@@ -45,6 +50,7 @@
 </head>
   <body class="bg-gray-100 dark:bg-gray-900">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
